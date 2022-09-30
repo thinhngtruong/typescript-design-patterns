@@ -5,14 +5,14 @@
  * The Singleton class defines the `getInstance` method that lets clients access
  * the unique singleton instance.
  */
- class Singleton {
+class Singleton {
   private static instance: Singleton;
 
   /**
    * The Singleton's constructor should always be private to prevent direct
    * construction calls with the `new` operator.
    */
-  private constructor() { }
+  private constructor() {}
 
   /**
    * The static method that controls the access to the singleton instance.
@@ -21,11 +21,11 @@
    * just one instance of each subclass around.
    */
   public static getInstance(): Singleton {
-      if (!Singleton.instance) {
-          Singleton.instance = new Singleton();
-      }
+    if (!Singleton.instance) {
+      Singleton.instance = new Singleton();
+    }
 
-      return Singleton.instance;
+    return Singleton.instance;
   }
 
   /**
@@ -33,21 +33,21 @@
    * executed on its instance.
    */
   public someBusinessLogic() {
-      // ...
+    // ...
   }
 }
 
 /**
-* The client code.
-*/
+ * The client code.
+ */
 function clientCode() {
   const s1 = Singleton.getInstance();
   const s2 = Singleton.getInstance();
 
   if (s1 === s2) {
-      console.log('Singleton works, both variables contain the same instance.');
+    console.log("Singleton works, both variables contain the same instance.");
   } else {
-      console.log('Singleton failed, variables contain different instances.');
+    console.log("Singleton failed, variables contain different instances.");
   }
 }
 
